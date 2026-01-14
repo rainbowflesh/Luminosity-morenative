@@ -53,7 +53,7 @@ It's meant to work well on dark windows, with **Mica** or **MicaAlt** backdrops,
 ## Theme Status
 | Component                         | Version   | Status              | Notes                            |
 | --------------------------------- | --------- | ------------------- | -------------------------------- |
-| **Taskbar**                       | **1.0.1** | 🔍 Under Testing   | N/A |
+| **Taskbar**                       | **1.0.2** | ✅ Stable           | Waiting Windhawk Review          |
 | **Start Menu**                    | **0.1.0** | 🔧 Work in Progress | Messy code, missing screenshots  |
 | **Notification / Control Center** | **0.1.0** | 🔧 Work in Progress | Messy code, missing styles       |
 | **File Explorer**                 | **0.1.0** | ⚠️ Heavy WIP        | Messy code, multiple issues      |
