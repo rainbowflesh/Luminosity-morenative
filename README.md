@@ -15,7 +15,7 @@ Theme JSON is up to date, but README information likely isn't!
 To apply the theme, you will need:
 - [Windhawk](https://windhawk.net/) (Of course)
 
-### Requeired Windhawk Mods
+### Required Windhawk Mods
 **Taskbar**
 - [Windows 11 Taskbar Styler](https://windhawk.net/mods/windows-11-taskbar-styler)
   **Required for Compact Taskbar**
@@ -53,7 +53,7 @@ It's meant to work well on dark windows, with **Mica** or **MicaAlt** backdrops,
 ## Theme Status
 | Component                         | Version   | Status              | Notes                            |
 | --------------------------------- | --------- | ------------------- | -------------------------------- |
-| **Taskbar**                       | **1.0.2** | ✅ Stable           | Waiting Windhawk Review          |
+| **Taskbar**                       | **1.1.0** | 🔎 Under Testing           | N/A          |
 | **Start Menu**                    | **0.1.0** | 🔧 Work in Progress | Messy code, missing screenshots  |
 | **Notification / Control Center** | **0.1.0** | 🔧 Work in Progress | Messy code, missing styles       |
 | **File Explorer**                 | **0.1.0** | ⚠️ Heavy WIP        | Messy code, multiple issues      |
@@ -76,7 +76,7 @@ This changelog follows **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/
 - Nothing, for now.
 
 ### Start Menu
-- Attempt to add more customization to Start Menu's App list and Search Menu.
+- Is passing through a complete rewrite.
 
 ### Notification / Action Center
 - Attempt to add missing JumpLists menu animations, and maybe remove more separation borders in other areas of the Action Center (Wired Display & Project).
@@ -91,17 +91,22 @@ This changelog follows **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/
 
 ## **Taskbar**
 
-### **[0.10.0] – Current**
+### **[1.2.0] – Current**
 
 **Status:** Under Testing
 
 **Added**
 
-- Added styles to Virtual Desktop hover flyout
+May get a final update soon after checking the public's preference for the Virtual Desktops Bar backup backdrop.
+https://www.reddit.com/r/Windhawk/comments/1qfdv2y/which_backdrop_do_you_prefer_design_question_for/
+
+- Darker backdrop
+- Removed always visible border in elements
+- Removed dropshadow
 
 **Fixed**
 
-- Uncentralized text
+N/A
 
 ---
 
