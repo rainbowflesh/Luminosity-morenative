@@ -101,7 +101,7 @@ This changelog follows **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/
 
 ## **Taskbar**
 
-### **[1.2.0] – Current**
+### **[1.1.0] – Current**
 
 **Status:** Under Testing
 
