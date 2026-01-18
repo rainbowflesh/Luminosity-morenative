@@ -7,6 +7,16 @@ While the themes have been tested, they are not final. Expect issues, unfinished
 
 Theme JSON is up to date, but README information likely isn't!
 
+## Credits
+<details>
+<summary>(click to expand)</summary>
+
+- [WindowGlass](https://github.com/Nathaniel4JC/Windows-11-Taskbar-Styler/tree/main/Themes/WindowGlass) - `{ThemeResource SystemChromeMediumColor}` and a few targets
+- [Lucid](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/Fluid) - Right-Click and mouse hovering animations.
+</details>
+
+
+
 ## Installation Guide
 
 <details>
@@ -53,7 +63,7 @@ It's meant to work well on dark windows, with **Mica** or **MicaAlt** backdrops,
 ## Theme Status
 | Component                         | Version   | Status              | Notes                            |
 | --------------------------------- | --------- | ------------------- | -------------------------------- |
-| **Taskbar**                       | **1.1.0** | 🔎 Under Testing           | N/A          |
+| **Taskbar**                       | **1.1.0** | ✅ Stable           | Waiting Windhawk Review          |
 | **Start Menu**                    | **0.1.0** | 🔧 Work in Progress | Messy code, missing screenshots  |
 | **Notification / Control Center** | **0.1.0** | 🔧 Work in Progress | Messy code, missing styles       |
 | **File Explorer**                 | **0.1.0** | ⚠️ Heavy WIP        | Messy code, multiple issues      |
@@ -73,7 +83,7 @@ This changelog follows **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/
 # Planned
 
 ### Taskbar
-- Nothing, for now.
+- Virtual Desktops Right-Click menus, but I have no clue on how to find their targets.
 
 ### Start Menu
 - Is passing through a complete rewrite.
