@@ -6,7 +6,7 @@
 
 > [!IMPORTANT]
 > It can have __**issues**__ with the [redesigned Windows 11 Start menu](https://microsoft.design/articles/start-fresh-redesigning-windows-start-menu/)! 
-> I currently don't have access to the 25h2 update.
+> I currently don't have access to the new Start Menu.
 
 ## Intro
 **Luminosity** is based on native Acrylic, using the maximum **TintLuminosityOpacity** value as its backdrop.
@@ -15,19 +15,32 @@ It's meant to be used with **Mica** or **MicaAlt** backdrops, with or without th
 
 ---
 
-## Optional: Clear Acrylic App Group Background
+## Optional settings
 
-If you prefer a Clear Acrylic look for the App Groups background instead of the default blur, you can change one value in the configuration file:
+### Clear Acrylic App Folder Background
 
-Find this line in the end:
+If you prefer a Clear Acrylic look for the Folder's background instead of the default blur, you can change one value in the JSON file:
+
+Find this line at the end:
 ```
-"controlStyles[19].styles[3]": "Background:=$1"
+"controlStyles[24].styles[4]": "Background:=$1"
 ```
 
 Replace the **"Background"** value from ```$1``` to ```$2```, like this:
 ```
-"controlStyles[19].styles[3]": "Background:=$2"
+"controlStyles[24].styles[4]": "Background:=$2"
 ```
+
+### Animations Guide
+
+To customize the animations, look for the last line `"styleConstants[17]": "AnimationSettings=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>"`
+
+- For all items to display immediately, set `IsStaggeringEnabled=\"True\"` to `False`.
+
+- `FromHorizontalOffset` and `FromVerticalOffset` are the directions where the items come from.
+  - Horizontal **Positive** values is **Right**, **Negative** is **Left**.
+  - Vertical **Positive** values is **Down**, **Negative** is **Up**.
+  
 ---
 
 ## General Information
@@ -80,152 +93,145 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[1]": "CornerRadius=$wcr",
   "controlStyles[0].styles[2]": "BorderThickness=$bt",
   "controlStyles[0].styles[3]": "BorderBrush=$bb",
-
-  "controlStyles[1].target": "Windows.UI.Xaml.Controls.Border#DropShadowDismissTarget",
-  "controlStyles[1].styles[0]": "CornerRadius=$wcr",
-  "controlStyles[1].styles[1]": "Visibility=1",
-
+  "controlStyles[1].target": "Windows.UI.Xaml.Controls.Border#AcrylicOverlay",
+  "controlStyles[1].styles[0]": "Visibility=Collapsed",
   "controlStyles[2].target": "Windows.UI.Xaml.Controls.Border#RootGridDropShadow",
   "controlStyles[2].styles[0]": "CornerRadius=$wcr",
   "controlStyles[2].styles[1]": "Visibility=1",
-
-  "controlStyles[3].target": "Windows.UI.Xaml.Controls.Border#RightCompanionDropShadow",
-  "controlStyles[3].styles[0]": "CornerRadius=$wcr",
-  "controlStyles[3].styles[1]": "Visibility=1",
-
-  "controlStyles[4].target": "Windows.UI.Xaml.Controls.Border#AcrylicOverlay",
-  "controlStyles[4].styles[0]": "Visibility=Collapsed",
-
-  "controlStyles[5].target": "Windows.UI.Xaml.Controls.Border#BorderElement",
-  "controlStyles[5].styles[0]": "Visibility=Collapsed",
-
-  "controlStyles[6].target": "Button#ShowAllAppsButton",
-  "controlStyles[6].styles[0]": "CornerRadius=$bcr",
-
-  "controlStyles[7].target": "Button#CloseAllAppsButton",
+  "controlStyles[3].target": "Button#ShowAllAppsButton",
+  "controlStyles[3].styles[0]": "CornerRadius=$bcr",
+  "controlStyles[4].target": "Button#CloseAllAppsButton",
+  "controlStyles[4].styles[0]": "CornerRadius=$bcr",
+  "controlStyles[5].target": "Windows.UI.Xaml.Controls.Grid#TopLevelSuggestionsContainer",
+  "controlStyles[5].styles[0]": "RenderTransform:=<TranslateTransform X=\"-19\" Y=\"0\" />",
+  "controlStyles[6].target": "Windows.UI.Xaml.Controls.GridViewItem > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[6].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[7].target": "Windows.UI.Xaml.Controls.Button#ShowMoreSuggestionsButton",
   "controlStyles[7].styles[0]": "CornerRadius=$bcr",
-
-  "controlStyles[8].target": "Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter",
+  "controlStyles[8].target": "Windows.UI.Xaml.Controls.Button#HideMoreSuggestionsButton",
   "controlStyles[8].styles[0]": "CornerRadius=$bcr",
+  "controlStyles[8].styles[1]": "Margin=0,9,65,9",
+  "controlStyles[9].target": "Windows.UI.Xaml.Controls.Button#HideMoreSuggestionsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock",
+  "controlStyles[9].styles[0]": "RenderTransform:=<ScaleTransform ScaleX=\"0.76\" ScaleY=\"0.76\" />",
+  "controlStyles[9].styles[1]": "Margin=0,5.9,0,0",
+  "controlStyles[10].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot0 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[10].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[11].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot1 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[11].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[12].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot2 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[12].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[13].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot3 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[13].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[14].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot4 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[14].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[15].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot5 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[15].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[16].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot6 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[16].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[17].target": "Windows.UI.Xaml.Controls.GridViewItem#RecommendedItemRoot7 > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[17].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[18].target": "StartDocked.NavigationPaneView#NavigationPane",
+  "controlStyles[18].styles[0]": "Margin=13,0,13,0",  
+  "controlStyles[19].target": "StartDocked.NavigationPaneButton#UserTileButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[19].styles[0]": "CornerRadius=$wcr",
+  "controlStyles[20].target": "Windows.UI.Xaml.Controls.Grid#UserTileIcon",
+  "controlStyles[20].styles[0]": "RenderTransform:=<TranslateTransform X=\"-5\" Y=\"0\" />",  
+  "controlStyles[21].target": "Windows.UI.Xaml.Controls.TextBlock#UserTileNameText",
+  "controlStyles[21].styles[0]": "RenderTransform:=<TranslateTransform X=\"-5\" Y=\"0\" />",
+  "controlStyles[22].target": "Grid#ContentBorder > Border#BackgroundBorder",
+  "controlStyles[22].styles[0]": "CornerRadius=$wcr",
+  "controlStyles[23].target": "StartDocked.PowerOptionsView#PowerButton > StartDocked.NavigationPaneButton#PowerButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[23].styles[0]": "CornerRadius=$wcr",
 
-  "controlStyles[9].target": "Windows.UI.Xaml.Controls.Border#BorderBackground",
-  "controlStyles[9].styles[0]": "CornerRadius=$bcr",
+  "controlStyles[25].target": "StartMenu.ExpandedFolderList > Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBox#ExpandedFolderNameTextBox > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BorderElement",
+  "controlStyles[25].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[26].target": "Windows.UI.Xaml.Controls.GridView#FolderList > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.ScrollViewer#ScrollViewer > Windows.UI.Xaml.Controls.Border#Root > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ScrollContentPresenter#ScrollContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.ContentControl > Windows.UI.Xaml.Controls.ItemsWrapGrid > Windows.UI.Xaml.Controls.GridViewItem > Windows.UI.Xaml.Controls.Border#ContentBorder > Windows.UI.Xaml.Controls.Grid#DroppedFlickerWorkaroundWrapper > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[26].styles[0]": "CornerRadius=$mcr",
 
-  "controlStyles[10].target": "Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-  "controlStyles[10].styles[0]": "Cornerradius:=$bcr",
+  "controlStyles[27].target": "Windows.UI.Xaml.Controls.StackPanel#RootPanel > Windows.UI.Xaml.Controls.Button#Header > Windows.UI.Xaml.Controls.Border#Border",
+  "controlStyles[27].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[28].target": "Windows.UI.Xaml.Controls.Grid#ContentBorder > Windows.UI.Xaml.Controls.Border#BorderBackground",
+  "controlStyles[28].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[29].target": "ListView#ZoomAppsList > ItemsWrapGrid > ListViewItem > Grid#ContentBorder > Border#BorderBackground",
 
-  "controlStyles[11].target": "Border#ContentBorder",
-  "controlStyles[11].styles[0]": "CornerRadius=6",
+  "controlStyles[30].target": "Windows.UI.Xaml.Controls.Border#RightCompanionDropShadow",
+  "controlStyles[30].styles[0]": "CornerRadius=$wcr",
+  "controlStyles[30].styles[1]": "Visibility=1",
+  "controlStyles[31].target": "Windows.UI.Xaml.Controls.Border#DropShadowDismissTarget",
+  "controlStyles[31].styles[0]": "CornerRadius=$wcr",
+  "controlStyles[31].styles[1]": "Visibility=1",
+  "controlStyles[32].target": "Windows.UI.Xaml.Controls.ItemsStackPanel > Windows.UI.Xaml.Controls.ListViewItem > Windows.UI.Xaml.Controls.Grid#ContentBorder > Windows.UI.Xaml.Controls.Border#BorderBackground",
+  "controlStyles[32].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[33].target": "Windows.UI.Xaml.Controls.Button#PrimaryActionBarButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter",
+  "controlStyles[33].styles[0]": "CornerRadius=$mcr",
+  "controlStyles[34].target": "Windows.UI.Xaml.Controls.Button#ActionBarOverflowButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter",
+  "controlStyles[34].styles[0]": "CornerRadius=$mcr",
 
-  "controlStyles[12].target": "Border#AppBorder",
-  "controlStyles[12].styles[0]": "Background:=$mbg",
-  "controlStyles[12].styles[1]": "CornerRadius=$wcr",
+  "controlStyles[35].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[35].styles[0]": "Background:=$mbg",
+  "controlStyles[35].styles[1]": "CornerRadius=$mcr",
+  "controlStyles[35].styles[2]": "BorderThickness=$bt",
+  "controlStyles[35].styles[3]": "BorderBrush=$bb",
+  "controlStyles[36].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter",
+  "controlStyles[36].styles[0]": "CornerRadius:=$wcr",
+  "controlStyles[36].styles[1]": "Shadow:=",
+  "controlStyles[37].target": "Windows.UI.Xaml.Controls.MenuFlyoutItem",
+  "controlStyles[37].styles[0]": "CornerRadius=$bcr",
+  "controlStyles[38].target": "Windows.UI.Xaml.Controls.MenuFlyoutSubItem",
+  "controlStyles[38].styles[0]": "CornerRadius=$bcr",
+  "controlStyles[39].target": "JumpViewUI.JumpListListView#ItemList > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.ScrollViewer#ScrollViewer > Windows.UI.Xaml.Controls.Border#Root > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ScrollContentPresenter#ScrollContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.ItemsStackPanel > Windows.UI.Xaml.Controls.ListViewItem",
+  "controlStyles[39].styles[0]": "CornerRadius=$bcr",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot",
+  "controlStyles[40].styles[0]": "Background:=$mbg",
+  "controlStyles[40].styles[1]": "CornerRadius=$mcr",
+  "controlStyles[40].styles[2]": "BorderThickness=$bt",
+  "controlStyles[40].styles[3]": "BorderBrush=$bb",
+  "controlStyles[40].styles[4]": "Shadow:=",
 
-  "controlStyles[13].target": "Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-  "controlStyles[13].styles[0]": "CornerRadius:=$wcr",
+  "controlStyles[41].target": "Border#AppBorder",
+  "controlStyles[41].styles[0]": "Background:=$mbg",
+  "controlStyles[41].styles[1]": "CornerRadius=$wcr",
+  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Border#AppBorder",
+  "controlStyles[42].styles[0]": "CornerRadius:=$wcr",
+  "controlStyles[42].styles[1]": "BorderThickness=$bt",
+  "controlStyles[42].styles[2]": "BorderBrush=$bb",
+  "controlStyles[43].target": "Windows.UI.Xaml.Controls.Border#LayerBorder",
+  "controlStyles[43].styles[0]": "Visibility=1",
+  "controlStyles[44].target": "Border#dropshadow",
+  "controlStyles[44].styles[0]": "CornerRadius:=$wcr",
+  "controlStyles[44].styles[1]": "Visibility=1",
 
-  "controlStyles[14].target": "Windows.UI.Xaml.Controls.Border#AppBorder",
-  "controlStyles[14].styles[0]": "CornerRadius:=$wcr",
-  "controlStyles[14].styles[1]": "BorderThickness=$bt",
-  "controlStyles[14].styles[2]": "BorderBrush=$bb",
+  "controlStyles[45].target": "ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel",
+  "controlStyles[45].styles[0]": "ChildrenTransitions:=$AnimationSettings",
+  "controlStyles[46].target": "Grid#LayoutRoot",
+  "controlStyles[46].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
+  "controlStyles[47].target": "Border#BackgroundBorder",
+  "controlStyles[47].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
 
-  "controlStyles[15].target": "Windows.UI.Xaml.Controls.Border#LayerBorder",
-  "controlStyles[15].styles[0]": "Visibility=1",
-
-  "controlStyles[16].target": "Border#dropshadow",
-  "controlStyles[16].styles[0]": "CornerRadius:=$wcr",
-  "controlStyles[16].styles[1]": "Visibility=1",
-
-  "controlStyles[17].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[17].styles[0]": "Background:=$mbg",
-  "controlStyles[17].styles[1]": "CornerRadius=$mcr",
-  "controlStyles[17].styles[2]": "BorderThickness=$bt",
-  "controlStyles[17].styles[3]": "BorderBrush=$bb",
-
-  "controlStyles[18].target": "Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot",
-  "controlStyles[18].styles[0]": "Background:=$mbg",
-  "controlStyles[18].styles[1]": "CornerRadius=$mcr",
-  "controlStyles[18].styles[2]": "BorderThickness=$bt",
-  "controlStyles[18].styles[3]": "BorderBrush=$bb",
-  "controlStyles[18].styles[4]": "Shadow:=",
-
-  "controlStyles[19].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter",
-  "controlStyles[19].styles[0]": "Shadow:=",
-
-  "controlStyles[20].target": "Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[20].styles[0]": "CornerRadius=$wcr",
-  "controlStyles[20].styles[1]": "BorderThickness=$bt",
-  "controlStyles[20].styles[2]": "BorderBrush=$bb",
-  "controlStyles[20].styles[2]": "BorderBrush=$bb",
-  "controlStyles[20].styles[3]": "Shadow:=",
-  "controlStyles[20].styles[4]": "Background:=$1",
-
-  "controlStyles[21].target": "Windows.UI.Xaml.Controls.MenuFlyoutItem",
-  "controlStyles[21].styles[0]": "CornerRadius=$bcr",
-
-  "controlStyles[22].target": "Windows.UI.Xaml.Controls.MenuFlyoutSubItem",
-  "controlStyles[22].styles[0]": "CornerRadius=$bcr",
-  
-  "controlStyles[23].target": "Windows.UI.Xaml.Controls.Button#Header > Windows.UI.Xaml.Controls.Border#Border",
-  "controlStyles[23].styles[0]": "CornerRadius=$bcr",
-  
-  "controlStyles[24].target": "StartDocked.UserTileView#UserTile > StartDocked.NavigationPaneButton#UserTileButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-
-  "controlStyles[25].target": "StartDocked.SearchBoxToggleButton",
-
-  "controlStyles[26].target": "Windows.UI.Xaml.Controls.Grid#InnerContent",
-  "controlStyles[26].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"-30\" />",
-  "controlStyles[26].styles[1]": "Margin=0,0,0,-30",
-
-  "controlStyles[27].target": "Windows.UI.Xaml.Controls.Grid#TopLevelSuggestionsListHeader",
-  "controlStyles[27].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"70\" />",
-
-  "controlStyles[28].target": "Windows.UI.Xaml.Controls.Grid#TopLevelSuggestionsContainer",
-  "controlStyles[28].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"70\" />",
-
-  "controlStyles[29].target": "StartMenu.PinnedList#StartMenuPinnedList > Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.GridView#PinnedList > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[29].styles[0]": "Margin=0,-55,0,-70",
-  
-  "controlStyles[30].target": "Windows.UI.Xaml.Controls.Grid#UserTileIcon",
-  "controlStyles[30].styles[0]": "RenderTransform:=<TranslateTransform X=\"-5\" Y=\"0\" />",  
-
-  "controlStyles[31].target": "Windows.UI.Xaml.Controls.TextBlock#UserTileNameText",
-  "controlStyles[31].styles[0]": "RenderTransform:=<TranslateTransform X=\"-5\" Y=\"0\" />",  
-
-  "controlStyles[32].target": "StartDocked.NavigationPaneView#NavigationPane",
-  "controlStyles[32].styles[0]": "Margin=13,0,13,0",  
-
-  "controlStyles[33].target": "Windows.UI.Xaml.Controls.Grid#ShowMoreSuggestions",
-  "controlStyles[33].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"69\" />",  
-
-
-  "controlStyles[34].target": "Windows.UI.Xaml.Controls.Button#HideMoreSuggestionsButton",
-  "controlStyles[34].styles[0]": "CornerRadius=$bcr",
-  "controlStyles[34].styles[1]": "Margin=0,9,65,9",
-
-
-  "controlStyles[35].target": "Windows.UI.Xaml.Controls.Button#HideMoreSuggestionsButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock",
-  "controlStyles[35].styles[0]": "RenderTransform:=<ScaleTransform ScaleX=\"0.76\" ScaleY=\"0.76\" />",
-  "controlStyles[35].styles[1]": "Margin=0,5.9,0,0",
-
-  "controlStyles[36].target": "ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel",
-  "controlStyles[36].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>",
-  "controlStyles[37].target": "Grid#LayoutRoot",
-  "controlStyles[37].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
-  "controlStyles[38].target": "Border#BackgroundBorder",
-  "controlStyles[38].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
-
-      
   "styleConstants[0]": "mbg=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0.0\" TintLuminosityOpacity=\"1.0\" Opacity=\"1\"/>",
   "styleConstants[1]": "bcr=10",
-  "styleConstants[2]": "wcr=20",
-  "styleConstants[3]": "mcr=15",
-  "styleConstants[4]": "t=Transparent",
-  "styleConstants[5]": "bb=#20FFFFFF",
-  "styleConstants[6]": "bt=1",
-  "styleConstants[7]": "1=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#00000000\" />",
-  "styleConstants[8]": "2=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0.0\" TintLuminosityOpacity=\"0.0\" Opacity=\"1\"/>"
+  "styleConstants[2]": "bbb=#13FFFFFF",
+  "styleConstants[3]": "wcr=20",
+  "styleConstants[4]": "mcr=15",
+  "styleConstants[5]": "t=Transparent",
+  "styleConstants[6]": "bb=#20FFFFFF",
+  "styleConstants[7]": "nbb=<LinearGradientBrush x:Key=\"ShellTaskbarItemGradientStrokeColorSecondaryBrush\" MappingMode=\"Absolute\" StartPoint=\"0,0\" EndPoint=\"0,3\"><LinearGradientBrush.GradientStops><GradientStop Offset=\"0.33\" Color=\"#1AFFFFFF\" /><GradientStop Offset=\"1\" Color=\"#0FFFFFFF\" /></LinearGradientBrush.GradientStops></LinearGradientBrush>",
+  "styleConstants[8]": "bt=1",
+  "styleConstants[9]": "btn=#10FFFFFF",
+  "styleConstants[10]": "bth=#15FFFFFF",
+  "styleConstants[11]": "btp=#15FFFFFF",
+  "styleConstants[12]": "nbt=<SolidColorBrush Color=\"{ThemeResource ControlFillColorDefault}\" />",
+  "styleConstants[13]": "nbth=<SolidColorBrush Color=\"{ThemeResource ControlFillColorSecondary}\" />",
+  "styleConstants[14]": "nbtp=<SolidColorBrush Color=\"{ThemeResource ControlFillColorTertiary}\" />",
+  "styleConstants[15]": "1=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#00000000\" />",
+  "styleConstants[16]": "2=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0.0\" TintLuminosityOpacity=\"0.0\" Opacity=\"1\"/>",
+  "controlStyles[24].target": "StartMenu.ExpandedFolderList > Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[24].styles[0]": "CornerRadius=$wcr",
+  "controlStyles[24].styles[1]": "BorderThickness=$bt",
+  "controlStyles[24].styles[2]": "BorderBrush=$bb",
+  "controlStyles[24].styles[3]": "Shadow:=",
+  "controlStyles[24].styles[4]": "Background:=$1",
+  "styleConstants[17]": "AnimationSettings=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>"
 }
 ```
-
 </details>
