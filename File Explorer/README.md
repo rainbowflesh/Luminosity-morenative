@@ -170,11 +170,13 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[31].styles[3]": "BorderBrush:=$bb",
   "controlStyles[32].target": "Microsoft.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar > Grid#LayoutRoot > Grid#OuterContentRoot > Grid#ContentRoot > Grid#PrimaryItemsRoot",
   "controlStyles[33].target": "ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel",
-  "controlStyles[33].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"0\" FromVerticalOffset=\"100\" /></TransitionCollection>",
+  "controlStyles[33].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>",
   "controlStyles[34].target": "Grid#LayoutRoot",
   "controlStyles[34].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
   "controlStyles[35].target": "Border#BackgroundBorder",
-  "controlStyles[35].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />"
+  "controlStyles[35].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
+  "controlStyles[36].target": "TabViewItem > Grid#LayoutRoot > Canvas > Microsoft.UI.Xaml.Shapes.Path#SelectedBackgroundPath",
+  "controlStyles[36].styles[0]": "Fill:=$mbt"
 }
 ```
 
