@@ -209,7 +209,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[35].styles[1]": "Margin=0,5.9,0,0",
 
   "controlStyles[36].target": "ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel",
-  "controlStyles[36].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"0\" FromVerticalOffset=\"100\" /></TransitionCollection>",
+  "controlStyles[36].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>",
   "controlStyles[37].target": "Grid#LayoutRoot",
   "controlStyles[37].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
   "controlStyles[38].target": "Border#BackgroundBorder",
@@ -227,4 +227,5 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[8]": "2=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0.0\" TintLuminosityOpacity=\"0.0\" Opacity=\"1\"/>"
 }
 ```
+
 </details>
