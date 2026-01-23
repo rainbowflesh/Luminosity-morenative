@@ -85,7 +85,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[4].target": "Grid#CalendarCenterGrid",
   "controlStyles[4].styles[0]": "Background:=$mbg",
   "controlStyles[4].styles[1]": "CornerRadius=$wcr",
-  "controlStyles[4].styles[2]": "Shadow:=",
+  "controlStyles[4].styles[2]": "BorderThickness=$bt",
+  "controlStyles[4].styles[3]": "BorderBrush=$bb",
+  "controlStyles[4].styles[4]": "Shadow:=",
 
   "controlStyles[5].target": "ScrollViewer#CalendarControlScrollViewer",
   "controlStyles[5].styles[0]": "Background:=$t",
@@ -101,7 +103,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[8].target": "Windows.UI.Xaml.Controls.Grid#ControlCenterRegion",
   "controlStyles[8].styles[0]": "Background:=$mbg",
   "controlStyles[8].styles[1]": "CornerRadius=$wcr",
-  "controlStyles[8].styles[2]": "Shadow:=",
+  "controlStyles[8].styles[2]": "BorderThickness=$bt",
+  "controlStyles[8].styles[3]": "BorderBrush=$bb",
+  "controlStyles[8].styles[4]": "Shadow:=",
 
   "controlStyles[9].target": "ScrollViewer#ListContent",
   "controlStyles[9].styles[0]": "Background:=$t",
@@ -121,8 +125,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[13].target": "Grid#MediaTransportControlsRegion",
   "controlStyles[13].styles[0]": "Background:=$mbg",
   "controlStyles[13].styles[1]": "CornerRadius=$wcr",
-  "controlStyles[13].styles[2]": "Height=470",  
-  "controlStyles[13].styles[3]": "Shadow:=",
+  "controlStyles[13].styles[2]": "BorderThickness=$bt",
+  "controlStyles[13].styles[3]": "BorderBrush=$bb",
+  "controlStyles[13].styles[4]": "Height=470",  
+  "controlStyles[13].styles[5]": "Shadow:=",
 
 
   "controlStyles[14].target": "Windows.UI.Xaml.Controls.Grid#MediaTransportControlsRegion",
@@ -241,13 +247,28 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[38].styles[0]": "Background:=$mbg",
 
   "controlStyles[39].target": "ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel",
-  "controlStyles[39].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"0\" FromVerticalOffset=\"100\" /></TransitionCollection>",
+  "controlStyles[39].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>",
   "controlStyles[40].target": "Windows.UI.Xaml..Controls.Grid#JumpListGrid > Windows.UI.Xaml.Controls.Grid#SystemItemsContainer > Windows.UI.Xaml.Controls.Border > JumpViewUI.SystemItemListView#SystemItemList > Windows.UI.Xaml.Controls.StackPanel",
-  "controlStyles[40].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"0\" FromVerticalOffset=\"100\" /></TransitionCollection>",
+  "controlStyles[40].styles[0]": "ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>",
   "controlStyles[41].target": "Grid#LayoutRoot",
-  " controlStyles[41].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
+  "controlStyles[41].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
   "controlStyles[42].target": "Border#BackgroundBorder",
   "controlStyles[42].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
+
+  "controlStyles[43].target": "Border#BackgroundBorder",
+  "controlStyles[43].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
+
+  "controlStyles[44].target": "Border#BackgroundBorder",
+  "controlStyles[44].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
+
+  "controlStyles[45].target": "Windows.UI.Xaml.Controls.Grid#FocusGrid",
+  "controlStyles[45].styles[0]": "Background:=$t",
+  "controlStyles[45].styles[1]": "BorderBrush:=$t",
+
+  "controlStyles[46].target": "ControlCenter.ControlCenterView#ControlCenterView > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Border#RootGridBorder > Windows.UI.Xaml.Controls.Grid#L1Grid > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.ContentControl#TogglesGroup > Windows.UI.Xaml.Controls.ContentPresenter > ControlCenter.PaginatedGridView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.GridView#RootGridView > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.ScrollViewer#ScrollViewer > Windows.UI.Xaml.Controls.Border#Root > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ScrollContentPresenter#ScrollContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter",
+  "controlStyles[46].styles[0]": "Height=50",
+
+
 
 
   "styleConstants[0]": "mbg=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0.0\" TintLuminosityOpacity=\"1.0\" Opacity=\"1\"/>",
@@ -263,4 +284,5 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[10]": "mbtp=#15FFFFFF"
 }
 ```
+
 </details>
