@@ -12,7 +12,7 @@ Theme JSON is up to date, but README information likely isn't!
 <summary>(click to expand)</summary>
 
 - [WindowGlass](https://github.com/Nathaniel4JC/Windows-11-Taskbar-Styler/tree/main/Themes/WindowGlass) - `{ThemeResource SystemChromeMediumColor}` and a few targets
-- [Lucid](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/Fluid) - Right-Click and mouse hovering animations.
+- [Fluid](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/Fluid) - Right-Click and mouse hovering animations.
 </details>
 
 
@@ -64,7 +64,7 @@ It's meant to work well on dark windows, with **Mica** or **MicaAlt** backdrops,
 | Component                         | Version   | Status              | Notes                            |
 | --------------------------------- | --------- | ------------------- | -------------------------------- |
 | **Taskbar**                       | **1.1.0** | ✅ Stable           | Waiting Windhawk Review          |
-| **Start Menu**                    | **0.1.0** | 🔧 Work in Progress | Messy code, missing screenshots  |
+| **Start Menu**                    | **0.2.0** | 🔧 Work in Progress | Missing screenshots  |
 | **Notification / Control Center** | **0.1.0** | 🔧 Work in Progress | Messy code, missing styles       |
 | **File Explorer**                 | **0.1.0** | ⚠️ Heavy WIP        | Messy code, multiple issues      |
 
@@ -86,7 +86,7 @@ This changelog follows **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/
 - Virtual Desktops Right-Click menus, but I have no clue on how to find their targets.
 
 ### Start Menu
-- Is passing through a complete rewrite.
+- Is passing through a complete rewrite, many hovering effects from [Fluid](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/Fluid) are planned to be added here.
 
 ### Notification / Action Center
 - Attempt to add missing JumpLists menu animations, and maybe remove more separation borders in other areas of the Action Center (Wired Display & Project).
@@ -122,21 +122,20 @@ N/A
 
 ## **Start Menu**
 
-### **[0.1.0] – Current**
+### **[0.2.0] – Current**
 
 **Status:** Work in Progress
 
 **Added**
 
-- Moved the main grid up to remove Search Box and typing UI. Only hiding the Search UI elements still keeps the text navigation beam.
-- Moved the Recommendation section down.
-- Moved the lower icons for overall consistency with the Right Companion (Phone Link).
-- Hovering and Menu animations.
+- Better organized JSON
+- Fixed many vague targets changing multiple other things and breaking them by accident (Couldn't specify all, but issues seems to be gone for me)
+- Styles for the previous cleaner look got removed to mitigate overlapping issues with the New Start Menu and lower resolution displays. A separated minimal layout will be available in the future, like I did with the Taskbar.
+- Suggestions grid is now aligned with the pinned items
+- Overall it should be working better
 
 **Known Issues**
 
-* Visual issues in lower screen resolutions.
-* Messy code.
 * Missing screenshots.
 * Some UI elements not themed yet
 
@@ -150,7 +149,7 @@ N/A
 
 **Added**
 
-* Hovering an Menu animations
+* Hovering and Right-Click Menu animations
 
 **Known Issues**
 
@@ -192,3 +191,27 @@ N/A
 **Fixed**
 
 - Animation speeds.
+
+---
+
+## **Start Menu**
+
+### **[0.1.0] – Current**
+
+**Status:** Work in Progress
+
+**Added**
+
+- Moved the main grid up to remove Search Box and typing UI. Only hiding the Search UI elements still keeps the text navigation beam.
+- Moved the Recommendation section down.
+- Moved the lower icons for overall consistency with the Right Companion (Phone Link).
+- Hovering and Menu animations.
+
+**Known Issues**
+
+* Visual issues in lower screen resolutions.
+* Messy code.
+* Missing screenshots.
+* Some UI elements not themed yet
+
+
