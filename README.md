@@ -63,7 +63,7 @@ It's meant to work well on dark windows, with **Mica** or **MicaAlt** backdrops,
 ## Theme Status
 | Component                         | Version   | Status              | Notes                            |
 | --------------------------------- | --------- | ------------------- | -------------------------------- |
-| **Taskbar**                       | **1.1.0** | ✅ Stable           | Waiting Windhawk Review          |
+| **Taskbar**                       | **1.1.1** | ✅ Stable           | Waiting Windhawk Review          |
 | **Start Menu**                    | **0.2.1** | 🔧 Work in Progress | Missing screenshots  |
 | **Notification / Control Center** | **0.1.0** | 🔧 Work in Progress | Messy code, missing styles       |
 | **File Explorer**                 | **0.1.0** | ⚠️ Heavy WIP        | Messy code, multiple issues      |
@@ -83,7 +83,7 @@ This changelog follows **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/
 # Planned
 
 ### Taskbar
-- Virtual Desktops Right-Click menus, but I have no clue on how to find their targets.
+- Virtual Desktops Right-Click menus.
 
 ### Start Menu
 - Is passing through a complete rewrite, many hovering effects from [Fluid](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/Fluid) are planned to be added here.
@@ -101,22 +101,17 @@ This changelog follows **[Keep a Changelog](https://keepachangelog.com/en/1.0.0/
 
 ## **Taskbar**
 
-### **[1.1.0] – Current**
+### **[1.1.1] – Current**
 
-**Status:** Under Testing
+**Status:** Stable
 
 **Added**
 
-May get a final update soon after checking the public's preference for the Virtual Desktops Bar backup backdrop.
-https://www.reddit.com/r/Windhawk/comments/1qfdv2y/which_backdrop_do_you_prefer_design_question_for/
-
-- Darker backdrop
-- Removed always visible border in elements
-- Removed dropshadow
+N/A
 
 **Fixed**
 
-N/A
+- `MultiWindowElement` looking weird on 25h2. (I suppose)
 
 ---
 
@@ -175,6 +170,23 @@ N/A
 # Older Versions
 
 ## **Taskbar**
+
+### **[1.1.0]**
+
+**Status:** Under Testing
+
+**Added**
+
+May get a final update soon after checking the public's preference for the Virtual Desktops Bar backup backdrop.
+https://www.reddit.com/r/Windhawk/comments/1qfdv2y/which_backdrop_do_you_prefer_design_question_for/
+
+- Darker backdrop
+- Removed always visible border in elements
+- Removed dropshadow
+
+**Fixed**
+
+N/A
 
 ### **[0.9.0]**
 
