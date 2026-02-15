@@ -28,6 +28,7 @@ To apply the theme, you will need:
 ### Required Windhawk Mods
 **Taskbar**
 - [Windows 11 Taskbar Styler](https://windhawk.net/mods/windows-11-taskbar-styler)
+  
   **Required for Compact Taskbar**
   - [Taskbar Labels for Windows 11](https://windhawk.net/mods/taskbar-labels)
   - [Taskbar Clock Customization](https://windhawk.net/mods/taskbar-clock-customization)
@@ -42,7 +43,7 @@ To apply the theme, you will need:
 - [Windows 11 File Explorer Styler](https://windhawk.net/mods/windows-11-file-explorer-styler)
 
 **Recommended**
-[Translucent Windows](https://windhawk.net/mods/translucent-windows) (use Mica or MicaAlt)
+- [Translucent Windows](https://windhawk.net/mods/translucent-windows) (use Mica or MicaAlt)
 </details>
 
 ---
