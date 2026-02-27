@@ -1,17 +1,35 @@
-# Process all JSON files under ./template
-Get-ChildItem -Path "./template" -Filter "*.json" -Recurse | ForEach-Object {
+# Source and destination directories
+$srcDir = "./template"
+$destDir = "./dist"
 
-    $filePath = $_.FullName
-    $content = Get-Content -Path $filePath -Raw
+# Create dist directory if not exists
+if (!(Test-Path $destDir)) {
+    New-Item -ItemType Directory -Path $destDir | Out-Null
+}
 
-    # Replace any bcr/wcr/mcr with value 8
-    # Keeps the original styleConstants[index] unchanged
+# Process all JSON files recursively
+Get-ChildItem -Path $srcDir -Filter "*.json" -Recurse | ForEach-Object {
+
+    $sourcePath = $_.FullName
+    $relativePath = $sourcePath.Substring((Resolve-Path $srcDir).Path.Length)
+    $targetPath = Join-Path $destDir $relativePath
+
+    # Ensure target subdirectory exists
+    $targetDir = Split-Path $targetPath -Parent
+    if (!(Test-Path $targetDir)) {
+        New-Item -ItemType Directory -Path $targetDir -Force | Out-Null
+    }
+
+    # Read file content
+    $content = Get-Content -Path $sourcePath -Raw
+
+    # Replace bcr/wcr/mcr values to 8 while keeping index unchanged
     $content = [regex]::Replace(
         $content,
         '"(styleConstants\[\d+\])"\s*:\s*"(bcr|wcr|mcr)=\d+"',
         '"$1": "$2=8"'
     )
 
-    # Write back to file
-    Set-Content -Path $filePath -Value $content -Encoding UTF8
+    # Write transformed content to dist
+    Set-Content -Path $targetPath -Value $content -Encoding UTF8
 }
