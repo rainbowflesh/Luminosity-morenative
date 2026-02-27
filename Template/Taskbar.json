@@ -131,7 +131,7 @@
     "controlStyles[38].target": "Border#BackgroundBorder",
     "controlStyles[38].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
     "styleConstants[0]": "mbg=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0.0\" TintLuminosityOpacity=\"1.0\" Opacity=\"1\"/>",
-    "styleConstants[1]": "bcr=82",
+    "styleConstants[1]": "bcr=8",
     "styleConstants[2]": "wcr=8",
     "styleConstants[3]": "mcr=8",
     "styleConstants[4]": "t=Transparent",

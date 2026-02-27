@@ -139,5 +139,9 @@
     "controlStyles[25].styles[2]": "BorderBrush=$bb",
     "controlStyles[25].styles[3]": "Shadow:=",
     "controlStyles[25].styles[4]": "Background:=$1",
-    "styleConstants[17]": "AnimationSettings=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"False\" FromHorizontalOffset=\"-15\" FromVerticalOffset=\"15\" /></TransitionCollection>"
+    "styleConstants[17]": "AnimationSettings=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"False\" FromHorizontalOffset=\"-15\" FromVerticalOffset=\"15\" /></TransitionCollection>",
+    "resourceVariables[0].variableKey": "",
+    "resourceVariables[0].value": "",
+    "controlStyles[49].target": "Windows.UI.Xaml.Controls.Grid#TopLevelSuggestionsContainer",
+    "controlStyles[49].styles[0]": "Margin:=60 0 0 0"
 }
