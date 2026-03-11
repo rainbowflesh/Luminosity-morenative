@@ -1,7 +1,7 @@
 {
     "theme": "Luminosity",
     "controlStyles[0].target": "TabViewItem > Grid#LayoutRoot",
-    "controlStyles[0].styles[0]": "CornerRadius=10",
+    "controlStyles[0].styles[0]": "CornerRadius=8",
     "styleConstants[0]": "mbg=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0.0\" TintLuminosityOpacity=\"1.0\" Opacity=\"1\"/>",
     "resourceVariables[0].variableKey": "Light",
     "resourceVariables[0].value": "<AcrylicBrush x:Key=\"MyAcrylicBrush\"             BackgroundSource=\"HostBackdrop\"             TintColor=\"#FFFF0000\"             TintOpacity=\"0.8\"             TintLuminosityOpacity=\"0.5\"             FallbackColor=\"#FFFF7F7F\"/>",
