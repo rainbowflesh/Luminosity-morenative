@@ -83,7 +83,6 @@
     "controlStyles[17].styles[3]": "BorderBrush=$bb",
     "controlStyles[17].styles[4]": "Shadow:=",
     "controlStyles[18].target": "ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel",
-    "controlStyles[18].styles[0]": "ChildrenTransitions:=$AnimationSettings",
     "controlStyles[19].target": "Grid#LayoutRoot",
     "controlStyles[19].styles[0]": "BackgroundTransition:=<BrushTransition Duration=\"0:0:0.100\" />",
     "controlStyles[20].target": "Border#BackgroundBorder",
@@ -127,7 +126,6 @@
     "styleConstants[4]": "t=Transparent",
     "styleConstants[5]": "bb=#20FFFFFF",
     "styleConstants[6]": "bt=1",
-    "styleConstants[7]": "AnimationSettings=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"False\" FromHorizontalOffset=\"-15\" FromVerticalOffset=\"15\" /></TransitionCollection>",
     "resourceVariables[0].variableKey": "",
     "resourceVariables[0].value": ""
 }
